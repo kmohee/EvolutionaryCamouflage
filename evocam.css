@@ -1,0 +1,130 @@
+header {
+  padding: 20px 0;
+}
+
+header .row1,
+footer .row1 {
+  display: flex;
+  align-items: flex-end;
+}
+
+header h1 {
+  font-weight: 200;
+  margin: 0;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header p {
+  padding: 0 20px;
+  margin: 0;
+}
+
+a{
+  padding: 10px;
+}
+
+h2{
+  margin-left: 10px;
+  text-align: center;
+}
+
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  background-image: url('photos/cogsci.jpg');
+  background-size: cover;
+  color: #ffffff;
+  height: 500px;
+  text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
+.jumbotron h2 {
+  font-size: 60px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.jumbotron h3 {
+  margin: 0 0 20px;
+  color: #fff;
+}
+
+.img-team{
+  object-fit: cover;
+  width: 262.5px;
+  height: 262.5px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-demo {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.img-text {
+  font: 400 30px/1.5 'Pacifico', Helvetica, sans-serif;
+  color: #000000;
+  text-align: center;
+}
+
+.team-text {
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 15px;
+  text-align: center;
+}
+
+.text-paragraph{
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: justify;
+}
+
+.team-text-normal{
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+}
+
+.top-buffer{
+  margin-top:40px;
+}
+
+.tab {
+  margin-left: 40px;
+}
+
+.text-code {
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: 50px;
+}
+
+hr {
+  border: 1px solid #0376ed;
+}
