@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Evolutionary Camouflage</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="evocam.css">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+<body>
+
+  <header class="container">
+    <div class="row1">
+      <h1 class="col-sm-4">Evolutionary Algorithms</h1>
+      <nav class="col-sm-8 text-right">
+        <h1>Project</h1>
+      </nav>
+    </div>
+  </header>
+
+  <section class="jumbotron">
+    <div class="container">
+      <div class="row1 text-center">
+        <h2>Evolutionary Camouflage</h2>
+        <h3>Genetic Algorithm</h3>
+      </div>
+    </div>
+  </section>
+
+  <h2> What is an Evolutionary Algorithm?</h2>
+  <div class="text-paragraph">
+    <p>
+      An Evolutionary algorithm (a.k.a genetic algorithm) is a search heuristic inspired by Darwin's theory of evolution. It reflects the process of selection where the fittest individual is selected for reproduction to pass on traits. In its simplest form, there are 5 phases: initial population, fitness function, selection, crossover, mutation. The <strong>initial population</strong> is the starting point. There is a set number of individuals, which represent solutions to the problem you want to solve. Each individual is characterized by a set of parameters (usually binary values) that can be joined to form a string. The <strong>fitness function</strong> assigns a fitness value to each individual based on how fit they are. <strong>Selection</strong> involves picking the fittest individuals who will pass their traits to the next generation. In <strong>crossover</strong>, a crossover point is selected for each pair at random. Each offspring is created by exchanging genes of parents until the crossover point is reached. <strong>Mutation</strong> occurs in a small percentage of offspring by flipping some of the bits in the string. This is done to ensure diversity to prevent premature convergence. <strong>Termination</strong> occurs when convergence is achieved and signals the end of the program. Convergence occurs when the offspring generation are not significantly different from the parents. This also means that a solution has been reached. It is also important to note that the population has a fixed size, and the least fit individuals are eliminated each round to leave space for new offspring.
+    </p>
+  </div>
+
+  <hr>
+
+
+  <h2>Implementation</h2>
+
+  <p class='text-paragraph'>We implemented a Genetic algorithm</p>
+
+
+  <p class='text-paragraph'>Pseudocode:</p>
+
+  <div class="text-code">
+    <p>START</p>
+    <p class="tab">Generate the initial population</p>
+    <p class="tab">Compute fitness</p>
+    <p>REPEAT</p>
+    <p class="tab">Selection</p>
+    <p class="tab">Crossover</p>
+    <p class="tab">Mutation</p>
+    <p class="tab">Compute fitness</p>
+    <p>UNTIL population has converged</p>
+    <p>STOP</p>
+  </div>
+
+  <br>
+
+  <div class="text-paragraph">
+    <p> Object-oriented programming: Each fish has an rgb value and a score variable </p>
+    <br>
+    <p><strong>Initial Population:</strong></p>
+    <ul>
+      <li><p>Generate 16 fish with random rgb values. Add each fish in a list of Fish.</p></li>
+      <li><p>The score will act as our fitness function. The score measures the “sameness” of the fish’s colour and that of the environment(background color) it is in. </p></li>
+    </ul>
+    <br>
+    <p><strong>Fitness function:</strong></p>
+    <ul>
+      <li><p>The euclidean distance of the rgb values of the fish and its environment</p></li>
+      <li><p>Scoring Function</p></li>
+         $$Score = \sqrt{(red_{fish} - red_{background})^2 + (green_{fish} - green_{background})^2 + (blue_{fish} - blue_{background})^2}$$
+
+    </ul>
+    <br>
+    <p><strong>Selection:</strong></p>
+    <p class="tab">We sort the list of fish based on their scores such that the fish which are most similar to their environment are at the beginning of the list and those that are the most different are at the back of the list.</p>
+    <br>
+    <p><strong>Crossover:</strong></p>
+    <ul>
+      <li><p>We take the first half of the list of fish and breed the offsprings.</p></li>
+      <li><p>There is a 50% chance that the r,g,b values will come from parent1 and parent2 respectively.</p></li>
+      <li><p>The fish are bred twice so as to get a population of 16 again.</p></li>
+      <li><p>The score of the offspring is then calculated same as above.</p></li>
+    </ul>
+    <br>
+    <p><strong>Mutation:</strong></p>
+    <p class="tab">There is a 4% chance that a mutation can occur, and the way it occurs is that an offspring would just have random values for its r,g,b.</p>
+    <br>
+    <p><strong>Termination:</strong></p>
+    <p class="tab">We chose not to terminate the program(as a design choice) so that we can observe the mutations</p>
+
+  </div>
+
+  <hr>
+
+  <h2> Demos </h2>
+
+  <section class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <a href="evocam_ocean_ready/index.html">
+          <img src="photos/beach.png" class="img-demo">
+          <!-- <div> Icons made by <a href="https://www.flaticon.com/authors/geotatah" title="geotatah">geotatah</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+          <div class="img-text">
+            <p>Ocean</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6">
+        <a href="evocam_lake_ready/index.html">
+          <img src="photos/river.png" class="img-demo">
+          <!-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+          <div class="img-text">
+            <p>Lake</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+</body>
+</html>
